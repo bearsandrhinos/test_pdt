@@ -2,16 +2,17 @@ view: 00_test {
 
 derived_table: {
   sql: SELECT
-  DATE(orders.created_at ) AS `orders.created_date`,
-  orders.id  AS `orders.id`,
-  orders.status  AS `orders.status`,
-  orders.user_id  AS `orders.user_id`
+  DATE(orders.created_at ) AS created_date,
+  orders.id  AS id,
+  orders.status  AS status,
+  orders.user_id  AS user_id
 FROM demo_db.orders  AS orders
 
 ORDER BY DATE(orders.created_at ) DESC
 LIMIT 500 ;;
 datagroup_trigger: dg_pv_00
 
+indexes: ["id"]
 }
 
   dimension: id {
