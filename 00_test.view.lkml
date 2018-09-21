@@ -11,7 +11,7 @@ FROM demo_db.orders  AS orders
 ORDER BY DATE(orders.created_at ) DESC
 LIMIT 500 ;;
 datagroup_trigger: dg_pv_00
-
+#new
 indexes: ["id"]
 }
 
